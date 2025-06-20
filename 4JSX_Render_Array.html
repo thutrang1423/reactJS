@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const courses = [
+            {
+                name: 'HTML, CSS',
+            },
+            {
+                name: 'NodeJS',
+            },
+            {
+                name: 'ReactJS',
+            },
+        ]
+        const jsx = (
+            <React.Fragment>
+                <ul>
+                    {courses.map((course, index) =>
+                        //React.createElement('li', null, course.name)
+                        <li key={index}>{course.name}</li> //=> chuyển thành react element
+                        //thêm key cho các children props là key={course.name} và các key phải là khác biệt
+                    )}
+                </ul>
+            </React.Fragment>
+        )
+
+        //code thuần: innerHTML là property cần chuyển chuổi HTML, nên cần dùng joint( để chuyển đổi mảng thành chuỗi) 
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(jsx);
+    </script>
+</body>
+
+</html>

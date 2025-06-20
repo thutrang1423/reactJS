@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+    1. react element types: string, function/class
+-->
+
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    function Header() { //Phải viết hoa chữ cái đầu
+        return (
+            <div className="header">New header</div>
+        )
+    }
+
+    class Content extends React.Component {
+        render() {
+            return (
+                <div className="content">New content</div>
+            )
+        }
+    }
+    const app = (
+        <div>
+            <Header />
+            <Content />
+            <div className="footer">Footer</div>
+        </div>
+    )
+
+    // Get root element
+    const rootElement = document.getElementById('root');
+    // Tạo root React 18
+    const root = ReactDOM.createRoot(rootElement);
+    // Render component
+    root.render(app);
+</script>
+
+</html>

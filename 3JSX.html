@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- JSX -> js xml -->
+    <div id="root"></div>
+</body>
+<script>
+    const ul = React.createElement(
+        'ul',
+        null,
+        React.createElement('li', null, 'JS'),
+        React.createElement('li', null, 'ReactJS'),
+    )
+    // Get root element
+    const rootElement = document.getElementById('root');
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(ul);
+
+</script>
+
+<script type="text/babel">
+    console.log("Babel");
+    const reactCourse = 'ReactJS'
+    const ulBabel = <ul className="course-list">
+        <li style={{ color: 'red', fontSize: '30px' }}>Javascript Babel</li>
+        <li>reactCourse Babel</li>
+    </ul>
+    root.render(ulBabel);
+</script>
+
+</html>

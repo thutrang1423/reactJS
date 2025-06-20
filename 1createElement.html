@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+</head>
+
+<div id="root"></div>
+
+<body>
+
+    <script>
+        const h1 = document.createElement('h1')
+        h1.innerText = 'Helllo world'
+        console.log(h1);
+        document.body.appendChild(h1)
+
+        const root = document.getElementById('root')
+        const h2 = document.createElement('h2')
+
+        h2.innerText = 'Helllo world root'
+        h2.id = 'heading'
+        h2.className = 'test class-2'
+        // h2.style = 'color: green; font-size'
+
+
+
+        Object.assign(h1.style, { //assign: giúp thêm property vào object h1.style
+            color: 'blue',
+            backgroundColor: '#333'
+        })
+
+        console.log('root', h2);
+        root.appendChild(h2)
+    </script>
+</body>
+
+</html>

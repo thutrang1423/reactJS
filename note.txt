@@ -1,0 +1,87 @@
+…or create a new repository on the command line
+echo "# reactJS" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/thutrang1423/reactJS.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/thutrang1423/reactJS.git
+git branch -M main
+git push -u origin main
+
+UNPKG: có tác dụng lấy được thư viện bên npm dưới dạng CDN(url online để dùng)
+CDN: có 1 mạng lưới máy chủ phần bố rộng khắp thế giới, khi 1 máy chủ bất kỳ của CDN được upload lên 1 file thì nó có cơ chế dồng bộ hết tất cả các máy chủ trên toàn thế giới
+
+reactjs có 2 phiên bản
+production: lad phiên bản khi code xong rồi đẩy lên cdn cho người dùng sử dụng
+development: dành cho dev khi code. nó dẹp hết cái khoog cần cho môi trường production đi
+
+react-dom: có thể render react element ra trình duyệt (nó là cầu nối giữa react và dom)
+
+Native: vid dụ Java là ngôn ngữ dùng viết ra ứng dụng biên dịch ra mã máy để chạy trên điện thoại
+react-native: là cầu nối giữa react và native 
+
+JSX -> javascript xml: hỗ trợ việc viết html trong js
+XML là kiểu cú pháp thẻ mở và thẻ đóng và html cũng là xml
+JSX -> cú pháp khá giống html
+có thể gán JSX vào 1 biến
+JSX phải luôn có 1 thẻ đóng mở ôm toàn bộ elemtnt con bên trong
+
+Babel -> là 1 thư viện JS, dùng phân tích cú pháp và chuyển đổi cú pháp
+vd chuyển đổi ES6->ES5, chuyển đổi JSX -> JS
+
+Prop key
+| So sánh                                   | `key`               | Các prop khác (name, id, title, ...) |
+| ----------------------------------------- | ------------------- | ------------------------------------ |
+| Có trong `props` của component            | ❌ Không           | ✅ Có                                 |
+| Dùng để render UI                         | ❌ Không trực tiếp | ✅ Có                                 |
+| Dùng để nhận diện phần tử trong danh sách | ✅ Có              | ❌ Không                              |
+| React xử lý nội bộ                        | ✅ Có              | ❌ Không                              |
+
+NodeJS là javascript runtime(nó là môi trường đập lập để chạy code js của mình trên đó)
+NodeJS có Chrome's V8 Js engine(được phát triển bởi google)
+tạo ra máy chủ web để chạy ngay trên máy tính của mình
+trinh duyệt cũng là 1 môi trường độc lập chạy code js
+
+cái nodejs tiện cũng cài thư viện npm(giúp dễ dàng cài đặt thư viện trên npm.com)
+trong thư viện react có webpack(react giúp chia nhỏ file còn webpack giúp combine lại các file gọm lại tối thiểu các file giúp file nhỏ gọn hơn tăng hiệu năng hay giảm dụng lượng file như bỏ xuống dòng và tối giản biến thành 1 ký tự,...)  
+
+npx kiểm tra trên máy đã có thư viện react app hay chưa nếu chưa thì nó sẽ tự lên npm để install
+react app ẩn đi cấu hình webpack 
+npm eject giúp bung hết cấu hình webpack ra ngoài, chỉ khi muốn cấu hình lại webpack
+
+
+-npm
+    project scope: phạm vi dự án (trong 1 dự án cụ thể)
+        npm i name-library --save => dependencies
+        npm i name-library --save-dev => devDependencies
+        npm i name-library -D => devDependencies
+        xoá thư viện: npm uninstall name-library
+    global scope: phạm vi toán cục (cài vào thư mục account để log in trong máy tính)
+        dùng khi dự án không bị phụ thuộc vào thư viện đó(trong code không có nơi nào import thư viện đó thì dùng global)
+        - npm i --global name-library
+        - npm i -g name-library
+        -xoá thư viện: - npm uninstall -g name-library
+-npx: Node => npm, npx
+npx: hỗ trợ thực thi những file có file bin nếu không có thì nó install vào
+
+yarn & npm:package manager 
+
+npm: cung cấp website quản lý thư viện: npmjs.com
+registry : kho lưu trữ thư viện, mình cũng có thể viết thư viện đẩy lên npm lưu trữ
+command-line interface(CLI): cách giao tiếp qua dòng lệnh để sai kiến máy tính làm theo dòng lệnh gì đấy 
+
+file-lock.json: chứa tất cả thư viện trong dự án
+và các thư viện phụ thuộc và lồng nhau
+nó giúp việc cài thư viện được tối ưu không có tình trạng 1 thư viện cùng phụ thuộc vào 1 thư viện nhưng thư viện phụ thuộc lại cài tới 2 lần
+
+npm cài thư viện tuần tự từng thằng 1
+npm chậm ít bộ nhớ 
+
+yarn cài song song được
+yarn nhanh tốn nhiều bộ nhớ
+
+vd nếu mình lưu tạm 1 thư viện trong máy và mình cần reinstall lại thư viện cho dự án thì nó không có các case lưu vị trí thư viện nên kiểm 
+tra sẽ lâu hơn, còn yarn có chứa lưu vị trí thư viện đó nên sẽ nhanh hơn nhưng tốn bộ nhớ hơn

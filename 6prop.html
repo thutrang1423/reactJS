@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+    Props
+    React elements:
+        sử dụng props giống với như với attribute của thẻ HTML
+        2 props class, for => className, htnlFor
+    React components
+        Sử dụng props giống như đối số cho Component/ function
+        Tự do đặt tên props
+            Đặt theo camelCase
+            Có thể bao gồm dấu gạch ngang
+    Chú ý:
+        Prop "key" là prop đặc biệt chỉ dùng khi ta đưa react element hay react component trong array 
+        Props cơ bản là đối số của Component giống callback của function
+            => Props có thể là bất cứ kiểu dữ liệu gì
+        Sử dụng destructuring
+
+        khi tạo function component thì nó không có giới hạn function nào hết
+    -->
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // //PostItem.js
+        function PostItem(props) { //react component
+            return (
+                <div className="post-item">
+                    {/*
+                    <label htmlFor="email">Email</label>
+                    <input id="email" /> // mục đích tạo htmlFor để kết nối label vào input nhấn vào label lập tức chỉ vào input tương ứng
+                    */}
+
+                    <img
+                        src={props.image}
+                    />
+                    <h2 className="post-title">{props.title}</h2>
+                    <p className="post-des">{props.des}</p>
+                </div>
+            )
+        }
+
+        // Sử dụng destructuring
+        // function PostItem({
+        //     image,
+        //     title,
+        //     des,
+        // }) { //react component
+        //     return (
+        //         <div className="post-item">
+        //             <img
+        //                 src={image}
+        //             />
+        //             <h2 className="post-title">{title}</h2>
+        //             <p className="post-des">{des}</p>
+        //         </div>
+        //     )
+        // }
+
+        function App() { //react component
+            return (
+                // console.log(<PostItem title="title test"/>);
+
+                <div id="wrapper"> {/*react element*/}
+                    <PostItem
+                        title="HTML và CSS từ zero đến hero"
+                        image="https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        des="Học lập trình HTML và CSS cho người mới bắt đầu"
+                    />{/*react component*/}
+                    {/*<PostItem /> 
+                    <PostItem />*/}
+                </div>
+            )
+        }
+
+        // Get root element
+        const rootElement = document.getElementById('root');
+        // Tạo root React 18
+        const root = ReactDOM.createRoot(rootElement);
+        // Render component
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
