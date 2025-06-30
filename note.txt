@@ -85,3 +85,10 @@ yarn nhanh tốn nhiều bộ nhớ
 
 vd nếu mình lưu tạm 1 thư viện trong máy và mình cần reinstall lại thư viện cho dự án thì nó không có các case lưu vị trí thư viện nên kiểm 
 tra sẽ lâu hơn, còn yarn có chứa lưu vị trí thư viện đó nên sẽ nhanh hơn nhưng tốn bộ nhớ hơn
+
+Hooks: là 1 hàm/method được viết sẵn và cung cấp bởi reactjs. mỗi hàm có 1 tính năng cho 1 trường hợp cụ thể để mình sử dụng
+khi dùng function component thì có thể thêm các hooks và dùng nó trong function component 
+chú ý tên, ý nghĩa, có nhận đối số không, và nó có trả ra cái gì hay không, những cái trả ra hoạt dộng như thế nào
+
+useEffect được dùng khi muốn thực hiện side effects(nói tới 1 chương trình phần mềm khi có 1 tác động xảy ra nó dẫn tới dữ liệu chương trình bị thay đổi)
+ứng dụng: Update DOM, Call API, Listen DOM events (Scroll, Resize), Cleanup (remove listener/ Unsubscribe, Clear timer)
