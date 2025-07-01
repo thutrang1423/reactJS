@@ -9,16 +9,28 @@
 // import UseReducerToDoList from './component/18UseReducerToDoList'
 // import MountedUnmountedShow from './component/5MountedUnmountedShow'
 // import UseEffect from './component/6useEffect'
-import ToDo from "./component/TodoUseReducer/ToDo"
-
+// import ToDo from "./component/TodoUseReducer/ToDo"
+// import UseContext from "./component/UseContext/19UseContext"
+import Content from "./component/UseContext/Content"
+import { useContext } from "react"
+import { ThemeContext } from './ThemeContext'
+import './App.css'
+import UseImperativeHandle from "./component/useImperativeHandle/19UseImperativeHandle"
 
 
 
 
 function App() {
+  const context = useContext(ThemeContext)
   return (
     <>
-      <ToDo />
+      {/*context global */}
+      <button onClick={context.toggleTheme}>Toggle theme</button>
+      <Content />
+
+      <UseImperativeHandle />
+
+      {/* <ToDo /> */}
       {/* <UseReducerToDoList /> */}
       {/* <UseRecucer /> */}
       {/* <UseMemo /> */}
@@ -29,6 +41,7 @@ function App() {
       {/* <ToDoList /> */}
       {/* <UseState1 /> */}
       {/* <UseState2 /> */}
+      {/* <UseContext /> */}
     </>
   )
 }

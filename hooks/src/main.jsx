@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { ThemeProvider } from "./ThemeContext.jsx"
+
 
 //Fake comments, custom event cách tự phát đi 1 event tuỳ ý
 function emmitComment(id) {
@@ -20,6 +22,8 @@ emmitComment(3)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </StrictMode>,
 )
