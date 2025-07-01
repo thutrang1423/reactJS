@@ -16,6 +16,7 @@ import { useContext } from "react"
 import { ThemeContext } from './ThemeContext'
 import './App.css'
 import UseImperativeHandle from "./component/useImperativeHandle/19UseImperativeHandle"
+import Parent from "./component/DataOfChildToParent/Parent"
 
 
 
@@ -29,7 +30,7 @@ function App() {
       <Content />
 
       <UseImperativeHandle />
-
+      <Parent />
       {/* <ToDo /> */}
       {/* <UseReducerToDoList /> */}
       {/* <UseRecucer /> */}
