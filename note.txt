@@ -11,6 +11,9 @@ git remote add origin https://github.com/thutrang1423/reactJS.git
 git branch -M main
 git push -u origin main
 
+switch về bề đúng phần code cũ
+git checkout copy-mã-branch
+
 UNPKG: có tác dụng lấy được thư viện bên npm dưới dạng CDN(url online để dùng)
 CDN: có 1 mạng lưới máy chủ phần bố rộng khắp thế giới, khi 1 máy chủ bất kỳ của CDN được upload lên 1 file thì nó có cơ chế dồng bộ hết tất cả các máy chủ trên toàn thế giới
 
@@ -92,3 +95,16 @@ chú ý tên, ý nghĩa, có nhận đối số không, và nó có trả ra cá
 
 useEffect được dùng khi muốn thực hiện side effects(nói tới 1 chương trình phần mềm khi có 1 tác động xảy ra nó dẫn tới dữ liệu chương trình bị thay đổi)
 ứng dụng: Update DOM, Call API, Listen DOM events (Scroll, Resize), Cleanup (remove listener/ Unsubscribe, Clear timer)
+
+npm run dev-> CSS internal
+npm run build -> CSS external
+
+react router dom: đay là 1 thư viện tạo ra cơ chế định tuyến cho những ứng dụng viết băng reactjs. định tuyến cho phép di chuyển qua lại giữa các trang nằm bên trong 1 website
+
+create react app đã cấu hình webpack giúp ta 
+tình huống cần cấu hình webpack, có chạy câu lệnh eject thì khi đó nó sẽ bung hết cấu trúc webpack ra ngoài nhưng không nên làm
+mà nên sử dụng customize-cra để customize webpack cảu react
+
+babel-plugin-module-resolver: cấu hình lại import webpack
+
+Prettier: giúp format lại các file code html, css, js, json thì code sẽ trở nên gọn gàng ngay ngắn hơn, thẫm mỹ hơn, dễ đọc hơn, dễ bảo trì hơn

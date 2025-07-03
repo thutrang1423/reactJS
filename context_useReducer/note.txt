@@ -1,0 +1,16 @@
+redux
+dễ debug hơn vì nó có thư viện react debug, ta có thể debug ra từng element dễ quan sát state thay đỏi trong ứng dụng như thế nào
+cung cấp sẵn kiến trúc sẵn sàng apply middleware(tương tự như logger)vào rồi
+có Addons and extensibility (dễ dàng mở rộng hơn)
+redux là cross-platform đa nền tảng và không phụ thuộc vào react, có thể sử dụng cho tất cả dự án ngôn ngữ JS
+performance tối ưu hơn, chỉ có component nào có state thay đổi thì mới render lại component đó thôi
+
+dùng cho những global state update lại nhiều lần để tối ưu hơn
+
+
+react-context
+phải tự đi viết ra những middleware và không có cớ chế kiến trúc hỗ trợ ta apply nhiều middleware 1 cách dễ dàng
+chỉ sử dụng với react thôi
+performance không tối ưu, chỉ cần 1 state global của 1 provider nào thay đổi thì toàn bộ component con trong provider đó sẽ render lại
+
+yếu điểm là render lại nhiều component chỉ nên sử dụng cho những ứng dụng vừa nhỏ và trường hợp xét lại state không nhiều

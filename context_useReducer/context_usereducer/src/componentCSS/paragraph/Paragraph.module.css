@@ -1,0 +1,10 @@
+.paragraph {
+    color: red;
+}
+
+.heading {
+    font-size: 16px;
+}
+
+/* những thẻ không thể module là *, các thẻ tab name vd: h1,...
+đặt tên camoCase */
