@@ -14,6 +14,10 @@ git push -u origin main
 switch về bề đúng phần code cũ
 git checkout copy-mã-branch
 
+Clone repo từ GitHub:
+git clone https://github.com/thutrang1423/reactJS.git
+→ Sau khi chạy xong, bạn sẽ có thư mục reactJS/ trong máy chứa toàn bộ source code từ GitHub.
+
 UNPKG: có tác dụng lấy được thư viện bên npm dưới dạng CDN(url online để dùng)
 CDN: có 1 mạng lưới máy chủ phần bố rộng khắp thế giới, khi 1 máy chủ bất kỳ của CDN được upload lên 1 file thì nó có cơ chế dồng bộ hết tất cả các máy chủ trên toàn thế giới
 
